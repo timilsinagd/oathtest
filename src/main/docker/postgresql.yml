@@ -1,0 +1,12 @@
+version: '2'
+services:
+    oathtesting-postgresql:
+        container_name: oathtesting-postgresql
+        image: postgres:9.5.1
+        # volumes:
+        #     - ~/volumes/jhipster/oathTesting/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=oathTesting
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

@@ -1,0 +1,15 @@
+version: '2'
+services:
+    oathtesting-app:
+        image: oathtesting
+        external_links:
+            - oathtesting-postgresql:postgresql
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/oathTesting
+        ports:
+            - 8080:8080
+    oathtesting-postgresql:
+        extends:
+            file: postgresql.yml
+            service: oathtesting-postgresql
